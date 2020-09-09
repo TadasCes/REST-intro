@@ -1,10 +1,10 @@
 export class User {
   name: string;
-  password?: string;
-  email?: string;
-  age?: number;
-  job?: string;
-  city?: string;
+  password: string | undefined;
+  email: string | undefined;
+  age: number | undefined;
+  job: string | undefined;
+  city: string | undefined;
   friendList: User[] = [];
 
   constructor(name: string) {
