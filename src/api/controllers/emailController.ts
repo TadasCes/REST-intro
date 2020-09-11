@@ -1,9 +1,8 @@
-import { UserUtil } from '../../user/userUtil'
 import { User } from '../../user/user'
 
 export class EmailController {
     static isEmailDefined(user: User): boolean {
-        return user.email === undefined ? true : false
+        return user.email !== undefined ? true : false
     }
 
     static isEmailValid(email: string): boolean {

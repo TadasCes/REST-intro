@@ -5,15 +5,13 @@ export class UserUtil {
     static findUser(name: string): User | undefined {
         const result = UserList.list.find((u) => u.name === name)
         if (result === undefined) {
-            console.log('User not found')
             return undefined
         } else {
-            console.log('User' + JSON.stringify(result, null, 2))
             return result
         }
     }
 
-    static AddPassword(user: User, password: string): void {
+    static addPassword(user: User, password: string): void {
         user.password = password
     }
 

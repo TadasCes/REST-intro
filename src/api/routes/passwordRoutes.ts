@@ -21,7 +21,7 @@ passwordRouter.put(
                             next(new HttpException(400, validation))
                             return
                         } else {
-                            UserUtil.AddPassword(user, req.body.password1)
+                            UserUtil.addPassword(user, req.body.password1)
                             res.status(200).json({
                                 status: 200,
                                 message: 'Password added',
