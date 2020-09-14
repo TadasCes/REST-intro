@@ -4,9 +4,9 @@ import { UserUtil } from './userUtil'
 export class UserList {
     static list: User[] = []
 
-    static addUser(user: User): void {
-        if (UserUtil.findUser(user.name) === undefined) {
-            this.list.push(user)
+    static addUser(name: string): void {
+        if (UserUtil.findUser(name) === undefined) {
+            this.list.push(new User(name))
         } else {
             throw Error('User already created')
         }

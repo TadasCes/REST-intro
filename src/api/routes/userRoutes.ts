@@ -2,6 +2,7 @@ import express from 'express'
 import { UserUtil } from '../../user/userUtil'
 import { UserList } from '../../user/userList'
 import HttpException from '../exceptions/exception'
+import { User } from '../../user/user'
 
 export const userRouter = express.Router()
 

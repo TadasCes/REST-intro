@@ -6,21 +6,21 @@ describe('User', () => {
     const user = new User('vardenis')
 
     test('Add user ', () => {
-        UserList.addUser(user)
+        UserList.addUser(user.name)
         expect(UserList.list).toContainEqual(user)
         UserList.deleteUser(user)
     })
 
     test('Add user (user already added)', () => {
-        UserList.addUser(user)
+        UserList.addUser(user.name)
         expect(() => {
-            UserList.addUser(user)
+            UserList.addUser(user.name)
         }).toThrow(Error)
         UserList.deleteUser(user)
     })
 
     test('Delete user', () => {
-        UserList.addUser(user)
+        UserList.addUser(user.name)
         UserList.deleteUser(user)
         expect(UserList.list).toEqual(expect.not.objectContaining(user))
     })
@@ -32,7 +32,7 @@ describe('User', () => {
     })
 
     test('Find user', () => {
-        UserList.addUser(user)
+        UserList.addUser(user.name)
         expect(UserUtil.findUser(user.name)).toEqual(user)
         UserList.deleteUser(user)
     })
